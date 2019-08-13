@@ -27,9 +27,12 @@ Also, I heard this is a good YouTube video: https://www.youtube.com/watch?v=dQw4
       var password = document.getElementById("password").value;
       var msg = document.getElementById("login_msg")
 
-      if (agent_number == "405") {
-        msg.innterHTML = "Welcome, agent 405."
+      if (agent_number == "405" && password == "Michigan") {
+        msg.innerHTML = "Welcome, agent 405."
         window.location = "mission3.html"
+        return false;
+      } else if (agent_number == "405") {
+        msg.innerHTML = "Wrong password, agent 405."
         return false;
       } else if (agent_number == "365") {
         msg.innerHTML = "You obviously aren't agent 365. He's in Turkey now, remember?";
@@ -60,7 +63,7 @@ Also, I heard this is a good YouTube video: https://www.youtube.com/watch?v=dQw4
             <input name="password" id="password" type="password" class="form-control" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-black">Login</button>
-          <p id="login_msg"></p>
+          <p id="login_msg" class="mt-3"></p>
           <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
         </form>
       </div>
